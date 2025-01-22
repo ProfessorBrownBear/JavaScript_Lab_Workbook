@@ -1,0 +1,257 @@
+JavaScript Lab Workbook
+This lab workbook is designed to illustrate the structural mechanics of JavaScript, focusing on variables, control structures, and functions. 
+
+Each section includes detailed illustrative code examples to facilitate understanding. 
+
+This workbook can be used as an addendum to the book.
+
+This lab workbook provides a structured approach to understanding the fundamental mechanics of JavaScript. 
+Each section includes illustrative code examples to enhance learning.
+
+Table of Contents
+
+Variables
+Primitive Data Types
+Assignment and Comparison
+
+Control Structures
+
+Conditional Statements
+Loops
+JavaScript Functions
+Function Declarations
+Function Expressions
+Arrow Functions
+Fat Arrow Functions
+Anonymous Functions
+Immediately Invoked Function Expressions (IIFE)
+Promises
+Callbacks
+
+Building Objects
+
+Functions as Objects
+Arrays as Objects
+Variables
+Primitive Data Types
+
+JavaScript supports several primitive data types, which are the building blocks of data manipulation in the language. 
+The main primitive types include:
+Number: Represents both integer and floating-point numbers.
+String: Represents a sequence of characters.
+Boolean: Represents a logical entity and can have two values: true or false.
+Undefined: A variable that has been declared but has not yet been assigned a value.
+Null: Represents the intentional absence of any object value.
+Symbol: A unique and immutable primitive value.
+BigInt: Represents integers with arbitrary precision.
+
+
+Example: Declaring Variables with Different Types
+
+let age = 25; // Number
+let name = "Alice"; // String
+let isStudent = true; // Boolean
+let address; // Undefined
+let car = null; // Null
+let uniqueId = Symbol('id'); // Symbol
+let bigNumber = BigInt(123456789012345678901234567890); // BigInt
+Assignment and Comparison
+JavaScript allows you to assign values to variables using the assignment operator =. Comparison can be done using various operators, including ==, ===, !=, and !==.
+Example: Assignment and Comparison
+javascript
+
+
+let x = 10;
+let y = "10";
+
+console.log(x == y);  // true (loose equality, type coercion)
+console.log(x === y); // false (strict equality, no type coercion)
+console.log(x != y);  // false
+console.log(x !== y); // true
+Control Structures
+Conditional Statements
+Conditional statements allow you to execute different code blocks based on certain conditions.
+Example: If-Else Statement
+javascript
+
+
+let score = 85;
+
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else {
+    console.log("Grade: C");
+}
+Loops
+Loops are used to execute a block of code multiple times.
+Example: For Loop
+javascript
+
+
+for (let i = 0; i < 5; i++) {
+    console.log(`Iteration: ${i}`);
+}
+Example: For...Each Loop
+javascript
+
+
+const fruits = ["apple", "banana", "cherry"];
+
+fruits.forEach((fruit) => {
+    console.log(fruit);
+});
+Example: For...Of Loop
+javascript
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+for (const number of numbers) {
+    console.log(number);
+}
+JavaScript Functions
+Function Declarations
+Functions are reusable blocks of code that perform a specific task.
+Example: Function Declaration
+javascript
+
+
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add(5, 3)); // Outputs: 8
+Function Expressions
+Functions can also be defined as expressions.
+Example: Function Expression
+javascript
+
+
+const subtract = function(a, b) {
+    return a - b;
+};
+
+console.log(subtract(5, 3)); // Outputs: 2
+Arrow Functions
+Arrow functions provide a more concise syntax for writing functions.
+Example: Arrow Function
+javascript
+
+
+const multiply = (a, b) => a * b;
+
+console.log(multiply(5, 3)); // Outputs: 15
+Fat Arrow Functions
+Fat arrow functions are similar to arrow functions but can be used to create more complex functions with explicit return statements.
+Example: Fat Arrow Function
+javascript
+
+
+const divide = (a, b) => {
+    if (b === 0) {
+        return "Cannot divide by zero";
+    }
+    return a / b;
+};
+
+console.log(divide(10, 2)); // Outputs: 5
+console.log(divide(10, 0)); // Outputs: Cannot divide by zero
+Anonymous Functions
+Anonymous functions are functions that do not have a name and are often used as arguments to other functions.
+Example: Anonymous Function
+javascript
+
+
+setTimeout(function() {
+    console.log("This message is displayed after 2 seconds");
+}, 2000);
+Immediately Invoked Function Expressions (IIFE)
+IIFE are functions that are executed immediately after they are defined.
+Example: IIFE
+javascript
+
+
+(function() {
+    console.log("This function runs immediately!");
+})();
+Promises
+Promises are used to handle asynchronous operations in JavaScript. They represent a value that may be available now, or in the future, or never.
+Example: Creating a Promise
+javascript
+
+
+const myPromise = new Promise((resolve, reject) => {
+    const success = true; // Simulate success or failure
+    if (success) {
+        resolve("Operation was successful!");
+    } else {
+        reject("Operation failed.");
+    }
+});
+
+myPromise
+    .then(result => console.log(result)) // Outputs: Operation was successful!
+    .catch(error => console.log(error));
+Callbacks
+Callbacks are functions that are passed as arguments to other functions and are executed after a certain event occurs.
+Example: Using Callbacks
+javascript
+
+
+function fetchData(callback) {
+    setTimeout(() => {
+        const data = { id: 1, name: "Alice" };
+        callback(data);
+    }, 1000);
+}
+
+fetchData((data) => {
+    console.log("Data received:", data); // Outputs: Data received: { id: 1, name: "Alice" }
+});
+Building Objects
+Objects in JavaScript are collections of key-value pairs.
+Example: Creating an Object
+javascript
+
+
+const person = {
+    name: "John",
+    age: 30,
+    greet: function() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+};
+
+person.greet(); // Outputs: Hello, my name is John
+Functions as Objects
+Functions in JavaScript are first-class citizens, meaning they can be treated like objects.
+Example: Function as an Object
+javascript
+
+
+function sayHello() {
+    console.log("Hello!");
+}
+
+sayHello.language = "English"; // Adding a property to a function
+console.log(sayHello.language); // Outputs: English
+Arrays as Objects
+Arrays are special types of objects that store ordered collections of values.
+Example: Creating an Array
+javascript
+
+
+const colors = ["red", "green", "blue"];
+console.log(colors[0]); // Outputs: red
+Example: Array Methods
+javascript
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Using map to double the numbers
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // Outputs: [2, 4, 6, 8, 10]
+
